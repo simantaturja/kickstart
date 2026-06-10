@@ -47,6 +47,8 @@ Progress is tracked at two levels, saved in the browser's `localStorage` under t
 
 It's per-browser and per-device; clearing site data resets it.
 
+The sidebar has a **"★ Star on GitHub" button** with a live star count. It's hidden until you set `REPO_URL` at the top of `assets/app.js` to the repo's GitHub URL.
+
 The site also has a **dark / light toggle** (button next to the brand in the sidebar, and in the mobile topbar). The choice is saved under `fks-theme`; first visit follows the OS `prefers-color-scheme`. Code blocks and Mermaid diagrams intentionally stay dark in light mode. Other niceties: prev/next chapter links at the bottom of every page, ←/→ keyboard navigation, reading-time estimate under each chapter title, and a back-to-top button.
 
 ## Editing content

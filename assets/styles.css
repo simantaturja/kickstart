@@ -64,6 +64,21 @@ a:hover { text-decoration: underline; }
 .nav a .check { color: var(--green); opacity: 0; transition: opacity .2s; flex-shrink: 0; }
 .nav a.completed .check { opacity: 1; }
 
+/* ── Star-on-GitHub button ────────────────────────────────── */
+.gh-star {
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  margin-top: 14px; padding: 8px 12px;
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+  color: var(--text); font-size: 13.5px; font-weight: 600;
+  transition: border-color .15s, transform .15s;
+}
+.gh-star:hover { border-color: var(--amber); text-decoration: none; transform: translateY(-1px); }
+.gh-star .ico { color: var(--amber); font-size: 15px; }
+.gh-star .count {
+  background: rgba(230, 180, 80, .15); color: var(--amber);
+  font-size: 12px; padding: 1px 8px; border-radius: 999px;
+}
+
 /* ── Sidebar progress card ────────────────────────────────── */
 .progress-card {
   margin-top: 18px; background: var(--bg-card);

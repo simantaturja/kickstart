@@ -6,6 +6,10 @@
 (function () {
   'use strict';
 
+  // Set to the GitHub repo URL (e.g. 'https://github.com/you/freshers-kick-start')
+  // to show the "Star on GitHub" button in the sidebar. Empty = hidden.
+  const REPO_URL = '';
+
   const content = document.getElementById('content');
   const chapterNav = document.getElementById('chapterNav');
   const aboutNav = document.getElementById('aboutNav');
@@ -36,6 +40,27 @@
     try { localStorage.setItem('fks-theme', next); } catch { /* private mode */ }
     applyTheme(next);
   }));
+
+  /* ── Star-on-GitHub button ──────────────────────────────── */
+
+  (function initGhStar() {
+    const el = document.getElementById('ghStar');
+    if (!REPO_URL || !el) return;
+    el.href = REPO_URL;
+    el.hidden = false;
+    // live star count — best-effort, button works fine without it
+    const m = REPO_URL.match(/github\.com\/([^/]+\/[^/]+?)(?:\.git|\/)?$/);
+    if (!m) return;
+    fetch('https://api.github.com/repos/' + m[1])
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d || typeof d.stargazers_count !== 'number') return;
+        const c = el.querySelector('.count');
+        c.textContent = d.stargazers_count;
+        c.hidden = false;
+      })
+      .catch(() => { /* offline or rate-limited — no count shown */ });
+  })();
 
   /* ── Completion tracking (localStorage) ─────────────────── */
 
