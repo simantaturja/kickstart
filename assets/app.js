@@ -8,7 +8,7 @@
 
   // Set to the GitHub repo URL (e.g. 'https://github.com/you/freshers-kick-start')
   // to show the "Star on GitHub" button in the sidebar. Empty = hidden.
-  const REPO_URL = '';
+  const REPO_URL = 'https://github.com/simantaturja/kickstart';
 
   const content = document.getElementById('content');
   const chapterNav = document.getElementById('chapterNav');
