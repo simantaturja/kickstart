@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freshers Kick-Start · Software Engineering Fundamentals</title>
+<script>
+/* set theme before first paint to avoid a flash of the wrong theme */
+(function () {
+  var t;
+  try { t = localStorage.getItem('fks-theme'); } catch (e) { /* ignore */ }
+  if (t !== 'light' && t !== 'dark') {
+    t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+  document.documentElement.dataset.theme = t;
+})();
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="progress"></div>
+
+<div class="topbar">
+  <button id="menuBtn" aria-label="Menu">☰</button>
+  <strong>Freshers Kick-Start</strong>
+  <button class="theme-toggle" aria-label="Toggle theme"></button>
+</div>
+<div class="scrim" id="scrim"></div>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="brand">Freshers Kick-Start
+        <small>Software Engineering Fundamentals</small>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle theme"></button>
+    </div>
+
+    <div class="progress-card" id="progressCard">
+      <div class="label"><span>Chapters</span><span class="count" id="chapterCount">0/0</span></div>
+      <div class="progress-bar"><div class="fill" id="chapterFill"></div></div>
+      <div class="label sections"><span>Sections</span><span class="count" id="sectionCount">0/0</span></div>
+      <div class="progress-bar sections"><div class="fill" id="sectionFill"></div></div>
+      <div class="hooray">All chapters complete 🎉</div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-title">Chapters</div>
+      <nav class="nav" id="chapterNav"></nav>
+    </div>
+    <div class="nav-section">
+      <div class="nav-title">Practice</div>
+      <nav class="nav" id="practiceNav"></nav>
+    </div>
+    <div class="nav-section">
+      <div class="nav-title">On this page</div>
+      <nav class="nav" id="pageNav"></nav>
+    </div>
+    <div class="nav-section">
+      <div class="nav-title">About</div>
+      <nav class="nav" id="aboutNav"></nav>
+    </div>
+  </aside>
+
+  <main class="content-wrap">
+    <article class="content" id="content">
+      <div class="loader">Loading…</div>
+    </article>
+  </main>
+</div>
+
+<button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

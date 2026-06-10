@@ -1,0 +1,52 @@
+[
+  {
+    "id": "intro",
+    "title": "Welcome / How to use",
+    "group": "about",
+    "files": ["content/00-intro.md"]
+  },
+  {
+    "id": "01-http",
+    "title": "① HTTP & The Web",
+    "group": "chapters",
+    "files": [
+      "content/01-http/00-overview.md",
+      "content/01-http/01-internet.md",
+      "content/01-http/02-what-is-http.md",
+      "content/01-http/03-methods.md",
+      "content/01-http/04-status-codes.md",
+      "content/01-http/05-headers.md",
+      "content/01-http/06-evolution.md",
+      "content/01-http/07-connections.md",
+      "content/01-http/08-caching.md",
+      "content/01-http/09-cookies.md",
+      "content/01-http/10-cors.md",
+      "content/01-http/11-https.md",
+      "content/01-http/12-problems.md",
+      "content/01-http/13-resources.md"
+    ]
+  },
+  {
+    "id": "02-rest",
+    "title": "② REST APIs",
+    "group": "chapters",
+    "files": [
+      "content/02-rest/00-overview.md",
+      "content/02-rest/01-what-is-rest.md",
+      "content/02-rest/02-resources.md",
+      "content/02-rest/03-uris.md",
+      "content/02-rest/04-http-methods.md",
+      "content/02-rest/05-statelessness.md",
+      "content/02-rest/06-representations.md",
+      "content/02-rest/07-richardson.md",
+      "content/02-rest/08-problems.md",
+      "content/02-rest/09-further-reading.md"
+    ]
+  },
+  {
+    "id": "brainstorm",
+    "title": "🧠 Brainstorm",
+    "group": "practice",
+    "files": ["content/03-brainstorm.md"]
+  }
+]
