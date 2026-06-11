@@ -15,6 +15,23 @@
   document.documentElement.dataset.theme = t;
 })();
 </script>
+<script>
+/* Kill any zombie service worker controlling this github.io origin (e.g. one
+   registered by another project at root scope) and drop its caches. This site
+   uses no service worker; without this, a stale SW serves cached pages forever. */
+(function () {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations()
+      .then(function (rs) { rs.forEach(function (r) { r.unregister(); }); })
+      .catch(function () {});
+  }
+  if (window.caches && caches.keys) {
+    caches.keys()
+      .then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); })
+      .catch(function () {});
+  }
+})();
+</script>
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css">
 <link rel="stylesheet" href="assets/styles.css?v=__BUILD__">
