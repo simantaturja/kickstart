@@ -6,6 +6,15 @@
 (function () {
   'use strict';
 
+  // Build version, taken from this script's own ?v= query (stamped at deploy
+  // with the commit SHA). Appended to every fetch so a new deploy gets a fresh
+  // URL — bypassing both the browser cache and the GitHub Pages CDN edge cache.
+  const BUILD = (function () {
+    try { return new URL(document.currentScript.src).searchParams.get('v') || ''; }
+    catch (e) { return ''; }
+  })();
+  const bust = u => BUILD ? u + (u.includes('?') ? '&' : '?') + 'v=' + BUILD : u;
+
   // Set to the GitHub repo URL (e.g. 'https://github.com/you/freshers-kick-start')
   // to show the "Star on GitHub" button in the sidebar. Empty = hidden.
   const REPO_URL = 'https://github.com/simantaturja/kickstart';
@@ -368,7 +377,7 @@
     content.innerHTML = '<div class="loader">Loading…</div>';
     try {
       const parts = await Promise.all(ch.files.map(async f => {
-        const res = await fetch(f, { cache: 'no-cache' });
+        const res = await fetch(bust(f), { cache: 'no-cache' });
         if (!res.ok) throw new Error('HTTP ' + res.status + ' for ' + f);
         return res.text();
       }));
@@ -473,7 +482,7 @@
 
   (async function init() {
     try {
-      const res = await fetch('content/chapters.json', { cache: 'no-cache' });
+      const res = await fetch(bust('content/chapters.json'), { cache: 'no-cache' });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       chapters = await res.json();
     } catch (e) {
