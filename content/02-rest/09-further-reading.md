@@ -15,4 +15,4 @@
 
 ---
 
-⬅️ Back to **[Chapter ① — HTTP & The Web](#01-http)**  ·  🏠 [Welcome](#intro)
+⬅️ Back to **[Chapter ① — HTTP & The Web](#01-http)**  ·  ➡️ Next up: **[Chapter ③ — Below HTTP](#03-below-http)**  ·  🏠 [Welcome](#intro)

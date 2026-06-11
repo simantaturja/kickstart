@@ -8,6 +8,7 @@ This is your **kick-start guide** to the fundamentals every software engineer le
 | ------- | ------------------ | --------------------------------------------------------------------------------------------------- |
 | ①       | **HTTP & The Web** | Every web app, mobile app, and API talks over HTTP. Understand it once, debug everything faster.    |
 | ②       | **REST APIs**      | The dominant style for designing web APIs. Get the principles and your endpoints stop being a mess. |
+| ③       | **Below HTTP — TCP, IP & DNS** | What "connection" really means. Read every line of `curl -v`, and know why latency — not bandwidth — runs the web. |
 
 ## How each chapter is built
 

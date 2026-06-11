@@ -44,6 +44,25 @@
     ]
   },
   {
+    "id": "03-below-http",
+    "title": "③ Below HTTP — TCP, IP & DNS",
+    "group": "chapters",
+    "files": [
+      "content/03-below-http/00-overview.md",
+      "content/03-below-http/01-layers.md",
+      "content/03-below-http/02-ip-packets.md",
+      "content/03-below-http/03-dns.md",
+      "content/03-below-http/04-ports-sockets.md",
+      "content/03-below-http/05-tcp-handshake.md",
+      "content/03-below-http/06-reliability.md",
+      "content/03-below-http/07-latency-bandwidth.md",
+      "content/03-below-http/08-curl-verbose.md",
+      "content/03-below-http/09-tools.md",
+      "content/03-below-http/10-problems.md",
+      "content/03-below-http/11-resources.md"
+    ]
+  },
+  {
     "id": "brainstorm",
     "title": "🧠 Brainstorm",
     "group": "practice",
